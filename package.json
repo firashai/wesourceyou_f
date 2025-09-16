@@ -29,6 +29,7 @@
     "recharts": "^2.6.2"
   },
   "scripts": {
+    "prebuild": "chmod +x node_modules/.bin/react-scripts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
