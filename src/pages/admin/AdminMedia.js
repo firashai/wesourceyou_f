@@ -24,7 +24,7 @@ const AdminMedia = () => {
       const token = localStorage.getItem('token');
       const approved = filter === 'all' ? undefined : filter === 'approved';
       
-      const response = await fetch(`http://localhost:3001/admin/media?page=${currentPage}&limit=10${approved !== undefined ? `&approved=${approved}` : ''}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/media?page=${currentPage}&limit=10${approved !== undefined ? `&approved=${approved}` : ''}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const AdminMedia = () => {
   const confirmApproval = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/media/${selectedItem.id}/approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/media/${selectedItem.id}/approve`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -87,7 +87,7 @@ const AdminMedia = () => {
   const handleEdit = async (updatedData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/media/${updatedData.id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/media/${updatedData.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -113,7 +113,7 @@ const AdminMedia = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/media/bulk-approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/media/bulk-approve`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

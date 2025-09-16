@@ -20,9 +20,9 @@ const MediaContent = () => {
       // If it's a relative path, construct the full URL
       let fullUrl = media.fileUrl;
       if (media.fileUrl.startsWith('/')) {
-        fullUrl = `http://localhost:3001${media.fileUrl}`;
+        fullUrl = `https://wesourceyoub2.vercel.app${media.fileUrl}`;
       } else if (!media.fileUrl.startsWith('http')) {
-        fullUrl = `http://localhost:3001/uploads/${media.fileUrl}`;
+        fullUrl = `https://wesourceyoub2.vercel.app/uploads/${media.fileUrl}`;
       }
       
       console.log('Opening URL:', fullUrl);
@@ -39,7 +39,7 @@ const MediaContent = () => {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('http://localhost:3001/media-content');
+        const response = await fetch('https://wesourceyoub2.vercel.app/media-content');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -108,7 +108,7 @@ const MediaContent = () => {
               <div className="media-preview" onClick={() => handleViewMedia(item)} style={{ cursor: 'pointer' }}>
                 {item.thumbnailUrl ? (
                   <img 
-                    src={item.thumbnailUrl.startsWith('http') ? item.thumbnailUrl : `http://localhost:3001${item.thumbnailUrl}`} 
+                    src={item.thumbnailUrl.startsWith('http') ? item.thumbnailUrl : `https://wesourceyoub2.vercel.app${item.thumbnailUrl}`} 
                     alt={item.title || 'Media'} 
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load

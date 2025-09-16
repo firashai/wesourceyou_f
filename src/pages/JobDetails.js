@@ -20,7 +20,7 @@ const JobDetails = () => {
   const fetchJobDetails = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3001/jobs/${id}`);
+      const response = await fetch(`https://wesourceyoub2.vercel.app/jobs/${id}`);
       
       if (response.ok) {
         const data = await response.json();
@@ -44,7 +44,7 @@ const JobDetails = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3001/job-applications', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/job-applications', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

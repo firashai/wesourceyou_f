@@ -21,7 +21,7 @@ const UserMediaManager = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3001/media-content/my/content', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/media-content/my/content', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -74,9 +74,9 @@ const UserMediaManager = () => {
       // If it's a relative path, construct the full URL
       let fullUrl = media.fileUrl;
       if (media.fileUrl.startsWith('/')) {
-        fullUrl = `http://localhost:3001${media.fileUrl}`;
+        fullUrl = `https://wesourceyoub2.vercel.app${media.fileUrl}`;
       } else if (!media.fileUrl.startsWith('http')) {
-        fullUrl = `http://localhost:3001/uploads/${media.fileUrl}`;
+        fullUrl = `https://wesourceyoub2.vercel.app/uploads/${media.fileUrl}`;
       }
       
       console.log('Opening URL:', fullUrl);
@@ -94,7 +94,7 @@ const UserMediaManager = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/media-content/my/${mediaId}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/media-content/my/${mediaId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -231,7 +231,7 @@ const UserMediaManager = () => {
               <div className="media-preview">
                 {media.thumbnailUrl ? (
                   <img 
-                    src={media.thumbnailUrl.startsWith('http') ? media.thumbnailUrl : `http://localhost:3001${media.thumbnailUrl}`} 
+                    src={media.thumbnailUrl.startsWith('http') ? media.thumbnailUrl : `https://wesourceyoub2.vercel.app${media.thumbnailUrl}`} 
                     alt={media.title || 'Media'} 
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load

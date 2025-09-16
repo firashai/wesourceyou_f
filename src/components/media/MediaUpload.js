@@ -217,8 +217,8 @@ const MediaUpload = ({ onUpload, onClose, editData = null }) => {
 
       const token = localStorage.getItem('token');
       const url = isEditing 
-        ? `http://localhost:3001/media-content/my/${editData.id}`
-        : 'http://localhost:3001/media-content/my/upload';
+        ? `https://wesourceyoub2.vercel.app/media-content/my/${editData.id}`
+        : 'https://wesourceyoub2.vercel.app/media-content/my/upload';
       
       const method = isEditing ? 'PATCH' : 'POST';
       

@@ -29,7 +29,7 @@ const Companies = () => {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('http://localhost:3001/companies');
+        const response = await fetch('https://wesourceyoub2.vercel.app/companies');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

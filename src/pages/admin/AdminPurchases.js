@@ -24,7 +24,7 @@ const AdminPurchases = () => {
         limit: '10'
       });
 
-      const response = await fetch(`http://localhost:3001/admin/purchases?${queryParams}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/purchases?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },

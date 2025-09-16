@@ -52,7 +52,7 @@ const EditJob = () => {
   const fetchJobData = async () => {
     try {
       setInitialLoading(true);
-      const response = await fetch(`http://localhost:3001/jobs/${id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/jobs/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -134,7 +134,7 @@ const EditJob = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:3001/jobs/${id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/jobs/${id}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

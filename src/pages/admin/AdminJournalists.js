@@ -31,7 +31,7 @@ const AdminJournalists = () => {
         params.append('approved', 'false');
       }
 
-      const response = await fetch(`http://localhost:3001/admin/journalists?${params}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/journalists?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
@@ -55,7 +55,7 @@ const AdminJournalists = () => {
 
   const handleApproval = async (journalistId, approved, notes = '') => {
     try {
-      const response = await fetch(`http://localhost:3001/admin/journalists/${journalistId}/approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/journalists/${journalistId}/approve`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -75,7 +75,7 @@ const AdminJournalists = () => {
 
   const handleEdit = async (updatedData) => {
     try {
-      const response = await fetch(`http://localhost:3001/admin/journalists/${updatedData.id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/journalists/${updatedData.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -100,7 +100,7 @@ const AdminJournalists = () => {
     if (selectedItems.length === 0) return;
 
     try {
-      const response = await fetch('http://localhost:3001/admin/journalists/bulk-approve', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/admin/journalists/bulk-approve', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

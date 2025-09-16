@@ -30,7 +30,7 @@ const AdminUsers = () => {
         ...(filters.role && { role: filters.role })
       });
 
-      const response = await fetch(`http://localhost:3001/admin/users?${queryParams}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/users?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
@@ -50,7 +50,7 @@ const AdminUsers = () => {
 
   const updateUserStatus = async (userId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:3001/admin/users/${userId}/status`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/users/${userId}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

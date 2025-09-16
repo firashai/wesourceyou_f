@@ -28,7 +28,7 @@ const Applications = () => {
     try {
       setLoading(true);
       
-      const response = await fetch('http://localhost:3001/companies/my/applications', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/companies/my/applications', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

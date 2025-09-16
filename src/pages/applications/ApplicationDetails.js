@@ -21,7 +21,7 @@ const ApplicationDetails = () => {
   const fetchApplicationDetails = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3001/companies/my/applications/${id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/companies/my/applications/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

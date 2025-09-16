@@ -29,7 +29,7 @@ const Journalists = () => {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('http://localhost:3001/journalists');
+        const response = await fetch('https://wesourceyoub2.vercel.app/journalists');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

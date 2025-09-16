@@ -37,8 +37,8 @@ const CompanyProfile = () => {
         setError(null);
         
         const endpoint = isOwnProfile 
-          ? 'http://localhost:3001/companies/my/profile'
-          : `http://localhost:3001/companies/${id}`;
+          ? 'https://wesourceyoub2.vercel.app/companies/my/profile'
+          : `https://wesourceyoub2.vercel.app/companies/${id}`;
         
         const headers = {
           'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ const CompanyProfile = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch('http://localhost:3001/companies/my/profile', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/companies/my/profile', {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

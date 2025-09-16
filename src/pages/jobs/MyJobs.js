@@ -22,7 +22,7 @@ const MyJobs = () => {
       setLoading(true);
       console.log('Fetching jobs with token:', token ? 'Token exists' : 'No token');
       
-      const response = await fetch('http://localhost:3001/companies/my/jobs', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/companies/my/jobs', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const MyJobs = () => {
   const handleDeleteJob = async (jobId) => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
-        const response = await fetch(`http://localhost:3001/jobs/${jobId}`, {
+        const response = await fetch(`https://wesourceyoub2.vercel.app/jobs/${jobId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,

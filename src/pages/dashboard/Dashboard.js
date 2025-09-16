@@ -40,7 +40,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
       
       // Fetch company jobs
-      const jobsResponse = await fetch('http://localhost:3001/companies/my/jobs', {
+      const jobsResponse = await fetch('https://wesourceyoub2.vercel.app/companies/my/jobs', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Dashboard = () => {
       }
 
       // Fetch company applications
-      const applicationsResponse = await fetch('http://localhost:3001/companies/my/applications', {
+      const applicationsResponse = await fetch('https://wesourceyoub2.vercel.app/companies/my/applications', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const Dashboard = () => {
       }
 
       // Fetch media content stats
-      const mediaResponse = await fetch('http://localhost:3001/media-content/my/content', {
+      const mediaResponse = await fetch('https://wesourceyoub2.vercel.app/media-content/my/content', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

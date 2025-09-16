@@ -37,8 +37,8 @@ const JournalistProfile = () => {
         setError(null);
         
         const endpoint = isOwnProfile 
-          ? 'http://localhost:3001/journalists/my/profile'
-          : `http://localhost:3001/journalists/${id}`;
+          ? 'https://wesourceyoub2.vercel.app/journalists/my/profile'
+          : `https://wesourceyoub2.vercel.app/journalists/${id}`;
         
         const headers = {
           'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ const JournalistProfile = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch('http://localhost:3001/journalists/my/profile', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/journalists/my/profile', {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

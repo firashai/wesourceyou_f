@@ -31,7 +31,7 @@ const AdminCompanies = () => {
         params.append('verified', 'false');
       }
 
-      const response = await fetch(`http://localhost:3001/admin/companies?${params}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/companies?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
@@ -55,7 +55,7 @@ const AdminCompanies = () => {
 
   const handleApproval = async (companyId, approved, notes = '') => {
     try {
-      const response = await fetch(`http://localhost:3001/admin/companies/${companyId}/approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/companies/${companyId}/approve`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -75,7 +75,7 @@ const AdminCompanies = () => {
 
   const handleEdit = async (updatedData) => {
     try {
-      const response = await fetch(`http://localhost:3001/admin/companies/${updatedData.id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/companies/${updatedData.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -100,7 +100,7 @@ const AdminCompanies = () => {
     if (selectedItems.length === 0) return;
 
     try {
-      const response = await fetch('http://localhost:3001/admin/companies/bulk-approve', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/admin/companies/bulk-approve', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchDashboardStats = async () => {
     try {
-      const response = await fetch('http://localhost:3001/admin/dashboard', {
+      const response = await fetch('https://wesourceyoub2.vercel.app/admin/dashboard', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },

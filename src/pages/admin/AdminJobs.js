@@ -24,7 +24,7 @@ const AdminJobs = () => {
       const token = localStorage.getItem('token');
       const approved = filter === 'all' ? undefined : filter === 'approved';
       
-      const response = await fetch(`http://localhost:3001/admin/jobs?page=${currentPage}&limit=10${approved !== undefined ? `&approved=${approved}` : ''}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/jobs?page=${currentPage}&limit=10${approved !== undefined ? `&approved=${approved}` : ''}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const AdminJobs = () => {
   const confirmApproval = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/jobs/${selectedJob.id}/approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/jobs/${selectedJob.id}/approve`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -87,7 +87,7 @@ const AdminJobs = () => {
   const handleEdit = async (updatedData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/jobs/${updatedData.id}`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/jobs/${updatedData.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -113,7 +113,7 @@ const AdminJobs = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/admin/jobs/bulk-approve`, {
+      const response = await fetch(`https://wesourceyoub2.vercel.app/admin/jobs/bulk-approve`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
